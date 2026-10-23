@@ -73,7 +73,18 @@
           <span class="count-pill bookmark-count-badge">2</span>
         </a>
         <a href="directory.html" class="btn btn-primary btn-sm">Find Specialist</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
       </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <a href="index.html" class="mobile-nav-link active">Home</a>
+      <a href="directory.html" class="mobile-nav-link">Directory Portal</a>
+      <a href="guides.html" class="mobile-nav-link">Beauty Guides</a>
+      <a href="routine-builder.html" class="mobile-nav-link">Routine Builder</a>
+      <a href="community.html" class="mobile-nav-link">Community & Q&A</a>
+      <a href="dashboard.html" class="mobile-nav-link" style="color: var(--gold-dark); font-weight: 700;">Daylight Dashboard</a>
     </div>
   </header>
 
@@ -209,10 +220,10 @@
   <!-- Section 3: Interactive Skin & Hair Assessment Banner -->
   <section class="section-tight" style="background: linear-gradient(135deg, rgba(231, 240, 235, 0.6) 0%, rgba(250, 247, 242, 0.8) 100%); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; padding: 32px 0;">
+      <div class="assessment-banner-grid">
         <div>
           <span class="section-tag" style="background: var(--sage-light); color: var(--sage-primary);">Circadian Analysis</span>
-          <h2 style="font-size: 2.5rem; margin: 12px 0 16px 0;">Find Your Personalized Daylight Ritual in 60 Seconds</h2>
+          <h2 style="margin: 12px 0 16px 0;">Find Your Personalized Daylight Ritual in 60 Seconds</h2>
           <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 24px;">Unsure whether your skin needs lipid barrier replenishment, gentle PHA turnover, or niacinamide pore balance? Take our clinical assessment to construct your custom AM & PM regimen.</p>
           <div style="display: flex; gap: 14px; flex-wrap: wrap;">
             <a href="routine-builder.html" class="btn btn-sage">Launch Interactive Routine Builder</a>
@@ -277,7 +288,7 @@
         <h2 class="section-title">Trusted By Over 40,000+ Care Seekers</h2>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div class="testimonial-grid">
         <div class="card" style="padding: 28px;">
           <div style="color: #F5A623; margin-bottom: 12px;">★★★★★</div>
           <p style="font-size: 0.95rem; color: var(--text-main); font-style: italic; margin-bottom: 16px;">
@@ -534,7 +545,7 @@
             <select id="booking-specialist-select" required></select>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-row-grid">
             <div class="form-group">
               <label for="booking-date">Preferred Date</label>
               <input type="date" id="booking-date" value="2026-10-26" required>
@@ -585,7 +596,7 @@
             <label for="enquiry-name">Your Full Name</label>
             <input type="text" id="enquiry-name" placeholder="e.g. Priya Sharma" required>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-row-grid">
             <div class="form-group">
               <label for="enquiry-phone">Phone / WhatsApp Number</label>
               <input type="tel" id="enquiry-phone" placeholder="+1 (555) 019-2831" required>

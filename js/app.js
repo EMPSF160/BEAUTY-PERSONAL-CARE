@@ -229,6 +229,24 @@ function initSharedComponents() {
     });
   });
 
+  // Mobile Nav Drawer Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+  if (mobileMenuBtn && mobileNavDrawer) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileNavDrawer.classList.toggle('open');
+      mobileMenuBtn.innerHTML = mobileNavDrawer.classList.contains('open') ? '✕' : '☰';
+    });
+    
+    document.addEventListener('click', (e) => {
+      if (!mobileNavDrawer.contains(e.target) && e.target !== mobileMenuBtn) {
+        mobileNavDrawer.classList.remove('open');
+        mobileMenuBtn.innerHTML = '☰';
+      }
+    });
+  }
+
   // Floating Back to Top
   const backToTopBtn = document.getElementById('floating-back-to-top');
   if (backToTopBtn) {

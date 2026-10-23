@@ -67,7 +67,18 @@
           <span class="count-pill bookmark-count-badge">2</span>
         </a>
         <a href="dashboard.html" class="btn btn-primary btn-sm">My Dashboard</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
       </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="directory.html" class="mobile-nav-link">Directory Portal</a>
+      <a href="guides.html" class="mobile-nav-link">Beauty Guides</a>
+      <a href="routine-builder.html" class="mobile-nav-link active">Routine Builder</a>
+      <a href="community.html" class="mobile-nav-link">Community & Q&A</a>
+      <a href="dashboard.html" class="mobile-nav-link" style="color: var(--gold-dark); font-weight: 700;">Daylight Dashboard</a>
     </div>
   </header>
 
@@ -76,7 +87,7 @@
     <div class="container">
       <div class="section-header" style="max-width: 780px;">
         <span class="section-tag">Precision Formulator</span>
-        <h1 style="font-size: 3.4rem; margin-top: 8px;">Interactive Daylight Routine Builder</h1>
+        <h1 style="margin-top: 8px;">Interactive Daylight Routine Builder</h1>
         <p class="section-desc">
           Select your epidermal skin profile, lifestyle rhythm, and therapeutic targets. Our clinical engine computes an optimized AM daylight shield and PM cellular regeneration sequence.
         </p>
@@ -136,7 +147,7 @@
             How much time do you want to dedicate to your circadian skincare ritual each morning and night?
           </p>
 
-          <div class="option-cards-grid" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="option-cards-grid">
             <div class="option-card depth-option" data-value="minimalist">
               <div class="option-icon">⚡</div>
               <div class="option-title">Minimalist 3-Step Protocol</div>
@@ -152,11 +163,11 @@
         </div>
 
         <!-- Generated Routine Output Card -->
-        <div class="card" style="padding: 36px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 246, 238, 0.9) 100%);">
+        <div class="card" style="padding: clamp(20px, 4vw, 36px); background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 246, 238, 0.9) 100%);">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 28px;">
             <div>
               <span class="section-tag">Circadian Blueprint</span>
-              <h2 style="font-size: 2.2rem; margin-top: 4px;">Your Personalized Care Regimen</h2>
+              <h2 style="margin-top: 4px;">Your Personalized Care Regimen</h2>
             </div>
             <div style="display: flex; gap: 10px;">
               <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ Print Blueprint</button>
