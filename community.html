@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-daylight="morning-sun">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community & Specialist Q&A | Verified Dermatologist Advice - LUMIÈRE</title>
+  <meta name="description" content="Engage with board-certified dermatologists, licensed estheticians, and trichologists. Ask clinical skincare questions and read real client routine transformations.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="community">
+
+  <!-- Daylight Top Ambience Bar (Strict Straight Line) -->
+  <div class="top-daylight-bar">
+    <div class="daylight-info-group">
+      <div class="daylight-status-pill">
+        <span class="sun-dot"></span>
+        <span>Community Exchange: <strong>Verified Doctors & Specialists</strong> Online</span>
+      </div>
+    </div>
+    <div class="daylight-mode-switcher">
+      <button class="theme-btn active" data-mode="morning-sun" title="Morning Sun Glow">☀️ Morning</button>
+      <button class="theme-btn" data-mode="high-noon" title="High Noon Clarity">🌤️ Noon</button>
+      <button class="theme-btn" data-mode="golden-hour" title="Golden Hour Warmth">🌅 Golden</button>
+      <button class="theme-btn" data-mode="night" title="Night Cellular Recovery Mode">🌙 Night</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="title">LUMIÈRE</span>
+          <span class="tagline">BEAUTY & PERSONAL CARE</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="directory.html" class="nav-link">Directory Portal</a>
+        <a href="guides.html" class="nav-link">Beauty Guides</a>
+        <a href="routine-builder.html" class="nav-link">Routine Builder</a>
+        <a href="community.html" class="nav-link active">Community & Q&A</a>
+        <a href="dashboard.html" class="nav-link" style="color: var(--gold-dark); font-weight: 700;">
+          Dashboard
+          <span class="nav-badge">Daylight</span>
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="day-night-toggle-btn" id="header-day-night-btn" aria-label="Toggle Day / Night Mode">
+          <span class="toggle-icon">☀️</span>
+          <span>Day</span>
+        </button>
+        <a href="dashboard.html" class="btn-icon" title="Saved Sanctuaries">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span class="count-pill bookmark-count-badge">2</span>
+        </a>
+        <button class="btn btn-primary btn-sm" onclick="openModal('ask-specialist-modal')">+ Ask a Specialist</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="section-tight" style="padding-bottom: 24px;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; border-bottom: 1px solid var(--border-light); padding-bottom: 24px;">
+        <div>
+          <span class="section-tag">Practitioner Exchange</span>
+          <h1 style="font-size: 3.2rem; margin-top: 6px;">Verified Specialist Q&A & Community</h1>
+          <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 680px; margin-top: 8px;">
+            Consult directly with licensed dermatologists, master estheticians, and trichologists. Share real recovery journeys, active ingredient layering advice, and clinic reviews.
+          </p>
+        </div>
+
+        <button class="btn btn-primary btn-lg" onclick="openModal('ask-specialist-modal')">
+          + Ask a Specialist
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Layout: Feed + Sidebar -->
+  <section style="padding: 24px 0 64px 0;">
+    <div class="container">
+      <div class="community-layout">
+        
+        <!-- Main Feed -->
+        <div>
+          <div style="display: flex; gap: 8px; margin-bottom: 24px; overflow-x: auto; padding-bottom: 4px;">
+            <button class="category-pill active">All Discussions</button>
+            <button class="category-pill">Answered by Doctors</button>
+            <button class="category-pill">Skincare Routines</button>
+            <button class="category-pill">Hair & Scalp</button>
+            <button class="category-pill">Barrier Recovery</button>
+          </div>
+
+          <div id="community-threads-list">
+            <!-- Rendered by js/app.js -->
+          </div>
+        </div>
+
+        <!-- Sidebar: Specialists On Duty & Guidelines -->
+        <div>
+          <!-- Featured Specialists On Duty Card -->
+          <div class="card" style="padding: 24px; margin-bottom: 24px;">
+            <span class="section-tag" style="background: var(--sage-light); color: var(--sage-primary);">On Duty Today</span>
+            <h3 style="font-size: 1.25rem; margin: 8px 0 16px 0;">Verified Practitioners</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--gold-soft); color: var(--gold-dark); display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                  EV
+                </div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.95rem;">Dr. Elena Vance, MD</div>
+                  <div style="font-size: 0.78rem; color: var(--sage-primary); font-weight: 600;">Board-Certified Dermatologist</div>
+                  <div style="font-size: 0.75rem; color: var(--text-subtle);">Aura Sanctuary &bull; Beverly Hills</div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--sage-light); color: var(--sage-primary); display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                  JT
+                </div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.95rem;">Julian Thorne</div>
+                  <div style="font-size: 0.78rem; color: var(--sage-primary); font-weight: 600;">Certified Trichologist</div>
+                  <div style="font-size: 0.75rem; color: var(--text-subtle);">L'Étoile Scalp Lab &bull; NYC</div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--rose-soft); color: var(--terracotta); display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                  CR
+                </div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.95rem;">Camilla Rivas</div>
+                  <div style="font-size: 0.78rem; color: var(--sage-primary); font-weight: 600;">Master Buccal Aesthetician</div>
+                  <div style="font-size: 0.75rem; color: var(--text-subtle);">Lymphatic Sculpt Specialist</div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-secondary btn-sm" style="width: 100%; margin-top: 20px;" onclick="window.location.href='directory.html'">
+              Book With a Specialist &rarr;
+            </button>
+          </div>
+
+          <!-- Community Guidelines Card -->
+          <div class="card" style="padding: 24px;">
+            <h4 style="font-size: 1.15rem; margin-bottom: 12px;">Sanctuary Community Standards</h4>
+            <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 18px; line-height: 1.6;">
+              <li style="margin-bottom: 8px;"><strong>Evidence First:</strong> We promote peer-reviewed cosmetic science over unfounded social trends.</li>
+              <li style="margin-bottom: 8px;"><strong>Medical Disclaimer:</strong> Peer Q&A is informational and does not replace emergency clinical diagnosis.</li>
+              <li><strong>Respect & Inclusivity:</strong> All skin tones, ethnicities, and gender identities are celebrated here.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="title">LUMIÈRE</span>
+              <span class="tagline">BEAUTY & PERSONAL CARE</span>
+            </div>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            A compassionate, science-led community where care seekers and licensed practitioners connect.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Directory Categories</h4>
+          <ul class="footer-links">
+            <li><a href="directory.html?category=MedSpa+%26+Dermatology">MedSpa & Dermatology</a></li>
+            <li><a href="directory.html?category=Luxury+Day+Spa">Luxury Day Spas</a></li>
+            <li><a href="directory.html?category=Hair+%26+Scalp">Hair & Scalp Health</a></li>
+            <li><a href="directory.html?category=Holistic+Skincare">Holistic Herbology</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Guides & Science</h4>
+          <ul class="footer-links">
+            <li><a href="guides.html">Barrier Repair Protocol</a></li>
+            <li><a href="guides.html">Circadian Skincare</a></li>
+            <li><a href="guides.html">Ingredient Glossary</a></li>
+            <li><a href="routine-builder.html">AM/PM Routine Builder</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Portal</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Daylight Dashboard</a></li>
+            <li><a href="dashboard.html">My Appointments</a></li>
+            <li><a href="dashboard.html">Saved Sanctuaries</a></li>
+            <li><a href="dashboard.html#provider">Practitioner Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Daylight Ambiance</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="theme-btn" data-mode="morning-sun" style="width: 100%; justify-content: flex-start;">☀️ Morning Sun</button>
+            <button class="theme-btn" data-mode="high-noon" style="width: 100%; justify-content: flex-start;">🌤️ High Noon</button>
+            <button class="theme-btn" data-mode="golden-hour" style="width: 100%; justify-content: flex-start;">🌅 Golden Hour</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 LUMIÈRE Beauty Personal Care Guide & Directory Portal. All rights reserved.</div>
+        <div>Verified Professional Advice</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Ask a Specialist Modal -->
+  <div class="modal-overlay" id="ask-specialist-modal">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div>
+          <span style="font-size: 0.78rem; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Clinical Consultation</span>
+          <h3 style="font-size: 1.6rem; margin-top: 2px;">Submit Question to Verified Specialists</h3>
+        </div>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="ask-specialist-form">
+          <div class="form-group">
+            <label for="q-topic">Topic & Category</label>
+            <select id="q-topic" required>
+              <option value="Skincare Science">Skincare Science & Barrier Repair</option>
+              <option value="Hair & Scalp">Hair & Scalp Trichology</option>
+              <option value="Active Ingredients">Active Ingredient Incompatibilities</option>
+              <option value="Clinic Treatments">In-Clinic Aesthetic Treatments</option>
+              <option value="Sensitive Skin">Eczema & Rosacea Calming</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="q-title">Question Summary</label>
+            <input type="text" id="q-title" placeholder="e.g. Can I use 15% Azelaic Acid with Vitamin C?" required>
+          </div>
+
+          <div class="form-group">
+            <label for="q-body">Detailed Context (Current skin type, products used, symptoms)</label>
+            <textarea id="q-body" rows="4" placeholder="Describe your skin condition and what you have tried so far..." required></textarea>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('ask-specialist-modal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Post Question to Board</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="floating-back-to-top" id="floating-back-to-top" title="Back to top">↑</button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

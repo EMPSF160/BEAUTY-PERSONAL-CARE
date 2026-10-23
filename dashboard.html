@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" data-daylight="morning-sun">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daylight Sanctuary Dashboard | Care Tracker & Bookings - LUMIÈRE</title>
+  <meta name="description" content="Manage your circadian beauty streak, track daily AM & PM active steps, view booked salon appointments, and manage saved beauty sanctuaries.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+
+  <!-- Daylight Top Ambience Bar (Strict Straight Line) -->
+  <div class="top-daylight-bar">
+    <div class="daylight-info-group">
+      <div class="daylight-status-pill">
+        <span class="sun-dot"></span>
+        <span>Daylight Index: <strong>Luminous Morning (UV 2)</strong> &bull; Personalized Sanctuary Dashboard</span>
+      </div>
+    </div>
+    <div class="daylight-mode-switcher">
+      <button class="theme-btn active" data-mode="morning-sun" title="Morning Sun Glow">☀️ Morning</button>
+      <button class="theme-btn" data-mode="high-noon" title="High Noon Clarity">🌤️ Noon</button>
+      <button class="theme-btn" data-mode="golden-hour" title="Golden Hour Warmth">🌅 Golden</button>
+      <button class="theme-btn" data-mode="night" title="Night Cellular Recovery Mode">🌙 Night</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="title">LUMIÈRE</span>
+          <span class="tagline">BEAUTY & PERSONAL CARE</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="directory.html" class="nav-link">Directory Portal</a>
+        <a href="guides.html" class="nav-link">Beauty Guides</a>
+        <a href="routine-builder.html" class="nav-link">Routine Builder</a>
+        <a href="community.html" class="nav-link">Community & Q&A</a>
+        <a href="dashboard.html" class="nav-link active" style="color: var(--gold-dark); font-weight: 700;">
+          Dashboard
+          <span class="nav-badge">Daylight</span>
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="day-night-toggle-btn" id="header-day-night-btn" aria-label="Toggle Day / Night Mode">
+          <span class="toggle-icon">☀️</span>
+          <span class="toggle-text">Day</span>
+        </button>
+        <button id="switch-portal-mode-btn" class="btn btn-secondary btn-sm" style="font-size: 0.8rem;">
+          Practitioner Portal
+        </button>
+        <a href="routine-builder.html" class="btn btn-primary btn-sm">+ Edit Routine</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard Main Container -->
+  <main class="section-tight" style="padding-top: 32px; padding-bottom: 72px;">
+    <div class="container">
+      
+      <!-- Daylight Greeting Hero -->
+      <div class="dashboard-hero">
+        <div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: var(--gold-dark); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">
+            Personalized Daylight Sanctuary
+          </div>
+          <h1 id="dashboard-greeting-text" style="font-size: 2.8rem; margin-bottom: 8px;">
+            Good Morning, Radiance Seeker
+          </h1>
+          <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 600px;">
+            Today's UV index is mild (2.4). Your skin barrier is operating at optimal circadian cellular balance. 3 of 5 morning steps are complete.
+          </p>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.9); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 18px 24px; text-align: center; box-shadow: var(--shadow-sm);">
+          <div style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--text-subtle);">Today's Circadian Phase</div>
+          <div style="font-size: 1.4rem; font-weight: 700; color: var(--gold-dark); margin: 4px 0;">AM Daylight Shield</div>
+          <div style="font-size: 0.8rem; color: var(--sage-primary); font-weight: 600;">Optimal: Antioxidants & Mineral SPF</div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Row -->
+      <div class="dashboard-stats-grid">
+        <div class="stat-metric-card">
+          <div class="stat-icon gold">🔥</div>
+          <div>
+            <div class="stat-number" id="dash-streak-count">7 Days</div>
+            <div class="stat-label">Glow Routine Streak</div>
+          </div>
+        </div>
+
+        <div class="stat-metric-card">
+          <div class="stat-icon rose">❤️</div>
+          <div>
+            <div class="stat-number" id="dash-bookmarks-count">2</div>
+            <div class="stat-label">Saved Sanctuaries</div>
+          </div>
+        </div>
+
+        <div class="stat-metric-card">
+          <div class="stat-icon sage">🗓️</div>
+          <div>
+            <div class="stat-number" id="dash-appointments-count">1</div>
+            <div class="stat-label">Booked Appointments</div>
+          </div>
+        </div>
+
+        <div class="stat-metric-card">
+          <div class="stat-icon blue">💧</div>
+          <div>
+            <div class="stat-number" id="dash-water-metric">2.0 L</div>
+            <div class="stat-label">Daily Cellular Hydration</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           VIEW A: CLIENT SANCTUARY DASHBOARD (Default)
+           =================================================================== -->
+      <div id="client-dashboard-view">
+        <div class="dashboard-main-grid">
+          
+          <!-- Column 1: Daily Skincare Checklist & Hydration -->
+          <div>
+            
+            <!-- AM Checklist Card -->
+            <div class="card" style="padding: 28px; margin-bottom: 28px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 1.4rem;">☀️</span>
+                  <div>
+                    <h3 style="font-size: 1.35rem;">Morning Daylight Shield (AM)</h3>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Protect against UV, blue light, and urban oxidation</div>
+                  </div>
+                </div>
+                <span style="font-size: 0.78rem; font-weight: 700; background: var(--gold-soft); color: var(--gold-dark); padding: 4px 10px; border-radius: var(--radius-full);">3/5 Complete</span>
+              </div>
+
+              <div id="dash-am-checklist">
+                <div class="checklist-item checked" data-step="step-1">
+                  <div class="checklist-checkbox">✓</div>
+                  <div class="checklist-text" style="flex: 1;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">1. Gentle Hydrating Low-pH Cleanser</div>
+                    <div style="font-size: 0.78rem; color: var(--text-subtle);">Amino Acid foam &bull; Removes overnight sebum without stripping</div>
+                  </div>
+                  <span style="font-size: 0.75rem; color: var(--sage-primary); font-weight: 600;">Done 08:15 AM</span>
+                </div>
+
+                <div class="checklist-item checked" data-step="step-2">
+                  <div class="checklist-checkbox">✓</div>
+                  <div class="checklist-text" style="flex: 1;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">2. Cellular Micro-Essence</div>
+                    <div style="font-size: 0.78rem; color: var(--text-subtle);">Polyglutamic & Hyaluronic Acid &bull; Pat onto damp skin</div>
+                  </div>
+                  <span style="font-size: 0.75rem; color: var(--sage-primary); font-weight: 600;">Done 08:18 AM</span>
+                </div>
+
+                <div class="checklist-item checked" data-step="step-3">
+                  <div class="checklist-checkbox">✓</div>
+                  <div class="checklist-text" style="flex: 1;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">3. 15% Pure Vitamin C (L-Ascorbic) + Ectoin</div>
+                    <div style="font-size: 0.78rem; color: var(--text-subtle);">Antioxidant photoprotective shield</div>
+                  </div>
+                  <span style="font-size: 0.75rem; color: var(--sage-primary); font-weight: 600;">Done 08:21 AM</span>
+                </div>
+
+                <div class="checklist-item" data-step="step-4">
+                  <div class="checklist-checkbox"></div>
+                  <div class="checklist-text" style="flex: 1;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">4. Biomimetic 3:1:1 Ceramide Day Cream</div>
+                    <div style="font-size: 0.78rem; color: var(--text-subtle);">Lipid replenishment to lock in humectants</div>
+                  </div>
+                  <span style="font-size: 0.75rem; color: var(--text-subtle);">Pending</span>
+                </div>
+
+                <div class="checklist-item" data-step="step-5">
+                  <div class="checklist-checkbox"></div>
+                  <div class="checklist-text" style="flex: 1;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">5. Mineral Daylight Sunscreen SPF 50+</div>
+                    <div style="font-size: 0.78rem; color: var(--text-subtle);">Broad spectrum UVA/UVB + HEV blue light shield</div>
+                  </div>
+                  <span style="font-size: 0.75rem; color: var(--text-subtle);">Pending</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- PM Checklist Card -->
+            <div class="card" style="padding: 28px; margin-bottom: 28px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 1.4rem;">🌙</span>
+                  <div>
+                    <h3 style="font-size: 1.35rem;">Night Cellular Recovery (PM)</h3>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Activate deep collagen mitosis & DNA lipid barrier repair</div>
+                  </div>
+                </div>
+                <span style="font-size: 0.78rem; font-weight: 700; background: var(--sage-light); color: var(--sage-primary); padding: 4px 10px; border-radius: var(--radius-full);">Starts 09:00 PM</span>
+              </div>
+
+              <div id="dash-pm-checklist">
+                <div class="checklist-item" data-step="step-1">
+                  <div class="checklist-checkbox"></div>
+                  <div class="checklist-text" style="flex: 1;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">1. Nourishing Botanical Cleansing Balm</div>
+                    <div style="font-size: 0.78rem; color: var(--text-subtle);">Dissolves SPF and airborne pollution</div>
+                  </div>
+                </div>
+
+                <div class="checklist-item" data-step="step-2">
+                  <div class="checklist-checkbox"></div>
+                  <div class="checklist-text" style="flex: 1;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">2. Low-pH Balancing Milk Cleanser</div>
+                    <div style="font-size: 0.78rem; color: var(--text-subtle);">Gentle secondary cleanse</div>
+                  </div>
+                </div>
+
+                <div class="checklist-item" data-step="step-3">
+                  <div class="checklist-checkbox"></div>
+                  <div class="checklist-text" style="flex: 1;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">3. Encapsulated Retinaldehyde 0.05% + Peptides</div>
+                    <div style="font-size: 0.78rem; color: var(--text-subtle);">Stimulates cellular renewal without flaking</div>
+                  </div>
+                </div>
+
+                <div class="checklist-item" data-step="step-4">
+                  <div class="checklist-checkbox"></div>
+                  <div class="checklist-text" style="flex: 1;">
+                    <div style="font-weight: 600; font-size: 0.95rem;">4. Deep Lipid Ceramide Recovery Sleeping Balm</div>
+                    <div style="font-size: 0.78rem; color: var(--text-subtle);">Locks in moisture while you sleep</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hydration Tracker Card -->
+            <div class="card" style="padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <h4 style="font-size: 1.2rem;">Daily Cellular Hydration</h4>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Maintain optimal stratum corneum turgor pressure</div>
+                </div>
+                <div id="water-count-display" style="font-weight: 700; color: #2B6CB0; font-size: 1rem;">
+                  5 / 8 Glasses (1,250 ml)
+                </div>
+              </div>
+
+              <div class="water-cups-row" id="water-cups-container">
+                <!-- Rendered dynamically by js/app.js -->
+              </div>
+              <p style="font-size: 0.78rem; color: var(--text-subtle);">
+                Tip: Click any glass to record your intake. Drinking water across daylight hours prevents dermal moisture evaporation.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Column 2: Booked Appointments & Saved Sanctuaries -->
+          <div>
+            
+            <!-- Booked Consultations Card -->
+            <div class="card" style="padding: 28px; margin-bottom: 28px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3 style="font-size: 1.35rem;">Booked Care Appointments</h3>
+                <a href="directory.html" class="btn btn-secondary btn-sm">+ Book New</a>
+              </div>
+              <div id="dashboard-appointments-list">
+                <!-- Rendered by js/app.js -->
+              </div>
+            </div>
+
+            <!-- Saved Sanctuaries Card -->
+            <div class="card" style="padding: 28px; margin-bottom: 28px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3 style="font-size: 1.35rem;">Saved Sanctuaries</h3>
+                <a href="directory.html" style="font-size: 0.82rem; color: var(--gold-dark); font-weight: 600;">Browse All &rarr;</a>
+              </div>
+              <div id="dashboard-bookmarks-list">
+                <!-- Rendered by js/app.js -->
+              </div>
+            </div>
+
+            <!-- Quick Skin Journal Entry -->
+            <div class="card" style="padding: 24px; background: linear-gradient(135deg, rgba(255, 252, 248, 0.95) 0%, rgba(246, 238, 228, 0.9) 100%);">
+              <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Today's Skin Mood Log</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px;">How does your skin barrier feel right now in this daylight?</p>
+              
+              <div style="display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap;">
+                <button class="quick-tag-pill" onclick="showToast('Skin logged: Radiant & Glowing! ✨', 'success')">✨ Luminous & Calm</button>
+                <button class="quick-tag-pill" onclick="showToast('Skin logged: Slightly Dry. Drink another glass of water.', 'info')">💧 Slightly Dry</button>
+                <button class="quick-tag-pill" onclick="showToast('Skin logged: Sensitive / Redness. Reapply Cica balm.', 'info')">🌸 Mild Flushing</button>
+              </div>
+
+              <textarea rows="2" placeholder="Private notes (e.g. Started new 5% Niacinamide serum today...)" style="width: 100%; padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-light); font-size: 0.88rem; outline: none; background: #FFFFFF;"></textarea>
+              <button class="btn btn-primary btn-sm" style="margin-top: 10px; width: 100%;" onclick="showToast('Skin journal entry recorded for October 22, 2026', 'success')">Save Journal Entry</button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           VIEW B: PRACTITIONER & CLINIC PORTAL (Hidden by default)
+           =================================================================== -->
+      <div id="provider-dashboard-view" style="display: none;">
+        
+        <!-- Provider Hero Banner -->
+        <div style="background: linear-gradient(135deg, #2D5A43 0%, #1E3D2D 100%); color: white; border-radius: var(--radius-lg); padding: 36px; margin-bottom: 36px;">
+          <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; background: rgba(255, 255, 255, 0.2); padding: 4px 10px; border-radius: var(--radius-full); font-weight: 700;">
+            Aesthetic Provider & Clinic Suite
+          </span>
+          <h2 style="font-size: 2.8rem; margin: 12px 0 8px 0; color: white;">Aura Sanctuary & Botanical MedSpa Portal</h2>
+          <p style="opacity: 0.9; max-width: 640px; font-size: 1.05rem;">
+            Manage your verified listing credentials, review client consultation inquiries, track profile impressions, and publish new treatment offerings.
+          </p>
+        </div>
+
+        <!-- Provider Metrics -->
+        <div class="dashboard-stats-grid">
+          <div class="stat-metric-card">
+            <div class="stat-icon gold">👁️</div>
+            <div>
+              <div class="stat-number">4,892</div>
+              <div class="stat-label">Monthly Profile Views</div>
+            </div>
+          </div>
+
+          <div class="stat-metric-card">
+            <div class="stat-icon sage">📩</div>
+            <div>
+              <div class="stat-number">48</div>
+              <div class="stat-label">Direct Client Inquiries</div>
+            </div>
+          </div>
+
+          <div class="stat-metric-card">
+            <div class="stat-icon rose">⭐</div>
+            <div>
+              <div class="stat-number">4.96</div>
+              <div class="stat-label">Verified Client Rating</div>
+            </div>
+          </div>
+
+          <div class="stat-metric-card">
+            <div class="stat-icon blue">💼</div>
+            <div>
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Medical Board Verified</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px;">
+          
+          <!-- Publish New Listing / Service Form -->
+          <div class="card" style="padding: 32px;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Publish New Sanctuary or Treatment Branch</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">
+              Submit your salon, dermatology practice, or wellness studio to be listed in the Lumière global directory.
+            </p>
+
+            <form id="new-clinic-listing-form">
+              <div class="form-group">
+                <label for="new-clinic-name">Sanctuary / Clinic Name</label>
+                <input type="text" id="new-clinic-name" placeholder="e.g. Elysian Skin Lab & Trichology" required>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                  <label for="new-clinic-category">Primary Category</label>
+                  <select id="new-clinic-category" required>
+                    <option value="MedSpa & Dermatology">MedSpa & Dermatology</option>
+                    <option value="Hair & Scalp">Hair & Scalp Lab</option>
+                    <option value="Luxury Day Spa">Luxury Day Spa</option>
+                    <option value="Holistic Skincare">Holistic Skincare</option>
+                    <option value="Organic Nail Studio">Organic Nail Studio</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="new-clinic-city">City Location</label>
+                  <select id="new-clinic-city" required>
+                    <option value="Beverly Hills">Beverly Hills, CA</option>
+                    <option value="Manhattan NYC">Manhattan NYC</option>
+                    <option value="Le Marais Paris">Le Marais, Paris</option>
+                    <option value="Mayfair London">Mayfair, London</option>
+                    <option value="Gangnam Seoul">Gangnam, Seoul</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                  <label for="new-clinic-price">Price Tier</label>
+                  <select id="new-clinic-price" required>
+                    <option value="$$">$$ (Accessible Luxe)</option>
+                    <option value="$$$">$$$ (Premium Botanical)</option>
+                    <option value="$$$$">$$$$ (Haute Medical Spa)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="new-clinic-lic">Medical License ID / Aesthetic Cert</label>
+                  <input type="text" id="new-clinic-lic" placeholder="MD-CAL-89210-26" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="new-clinic-desc">Sanctuary Philosophy & Signature Service</label>
+                <textarea id="new-clinic-desc" rows="3" placeholder="Describe your circadian treatments, eco-friendly certifications, and client philosophy..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-sage btn-lg" style="width: 100%;">
+                Publish Verified Sanctuary &rarr;
+              </button>
+            </form>
+          </div>
+
+          <!-- Pending Client Inquiries -->
+          <div class="card" style="padding: 28px;">
+            <h4 style="font-size: 1.25rem; margin-bottom: 16px;">Recent Client Booking Inquiries</h4>
+
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div style="padding: 14px; background: var(--bg-primary); border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                  <span style="font-weight: 700; font-size: 0.95rem;">Eleanor Vance</span>
+                  <span style="font-size: 0.72rem; color: var(--sage-primary); font-weight: 700;">Oct 26, 11:30 AM</span>
+                </div>
+                <div style="font-size: 0.82rem; color: var(--gold-dark); font-weight: 600;">Circadian Barrier Repair Facial ($280)</div>
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">"Recovering from tretinoin peeling. Requesting Dr. Elena Vance."</p>
+                <div style="display: flex; gap: 8px; margin-top: 10px;">
+                  <button class="btn btn-primary btn-sm" onclick="showToast('Inquiry confirmed & calendar invite sent to Eleanor', 'success')">Accept</button>
+                  <button class="btn btn-secondary btn-sm" onclick="showToast('Inquiry rescheduled notification sent', 'info')">Reschedule</button>
+                </div>
+              </div>
+
+              <div style="padding: 14px; background: var(--bg-primary); border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                  <span style="font-weight: 700; font-size: 0.95rem;">Marcus Sterling</span>
+                  <span style="font-size: 0.72rem; color: var(--gold-dark); font-weight: 700;">Oct 27, 02:00 PM</span>
+                </div>
+                <div style="font-size: 0.82rem; color: var(--gold-dark); font-weight: 600;">Lymphatic Sculpt & Buccal Massage ($240)</div>
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">"First time client, seeking morning facial de-puffing."</p>
+                <div style="display: flex; gap: 8px; margin-top: 10px;">
+                  <button class="btn btn-primary btn-sm" onclick="showToast('Inquiry confirmed for Marcus', 'success')">Accept</button>
+                  <button class="btn btn-secondary btn-sm" onclick="showToast('Inquiry rescheduled notification sent', 'info')">Reschedule</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="title">LUMIÈRE</span>
+              <span class="tagline">BEAUTY & PERSONAL CARE</span>
+            </div>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Your personal daylight portal for tracking daily circadian wellness and managing certified care appointments.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Directory Categories</h4>
+          <ul class="footer-links">
+            <li><a href="directory.html?category=MedSpa+%26+Dermatology">MedSpa & Dermatology</a></li>
+            <li><a href="directory.html?category=Luxury+Day+Spa">Luxury Day Spas</a></li>
+            <li><a href="directory.html?category=Hair+%26+Scalp">Hair & Scalp Health</a></li>
+            <li><a href="directory.html?category=Holistic+Skincare">Holistic Herbology</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Guides & Science</h4>
+          <ul class="footer-links">
+            <li><a href="guides.html">Barrier Repair Protocol</a></li>
+            <li><a href="guides.html">Circadian Skincare</a></li>
+            <li><a href="guides.html">Ingredient Glossary</a></li>
+            <li><a href="routine-builder.html">AM/PM Routine Builder</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Portal</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Daylight Dashboard</a></li>
+            <li><a href="dashboard.html">My Appointments</a></li>
+            <li><a href="dashboard.html">Saved Sanctuaries</a></li>
+            <li><a href="community.html">Community Forum</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Daylight Ambiance</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="theme-btn" data-mode="morning-sun" style="width: 100%; justify-content: flex-start;">☀️ Morning Sun</button>
+            <button class="theme-btn" data-mode="high-noon" style="width: 100%; justify-content: flex-start;">🌤️ High Noon</button>
+            <button class="theme-btn" data-mode="golden-hour" style="width: 100%; justify-content: flex-start;">🌅 Golden Hour</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 LUMIÈRE Beauty Personal Care Guide & Directory Portal. All rights reserved.</div>
+        <div>Personal Sanctuary Portal</div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="floating-back-to-top" id="floating-back-to-top" title="Back to top">↑</button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

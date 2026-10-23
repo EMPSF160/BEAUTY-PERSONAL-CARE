@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" data-daylight="morning-sun">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMIÈRE | Daylight Beauty & Personal Care Guide & Directory Portal</title>
+  <meta name="description" content="Discover premier daylight wellness salons, verified dermatology clinics, clinical skincare guides, and personalized morning & evening beauty routines.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <!-- Daylight Top Ambience Bar (Strict Straight Line) -->
+  <div class="top-daylight-bar">
+    <div class="daylight-info-group">
+      <div class="daylight-status-pill">
+        <span class="sun-dot"></span>
+        <span>Daylight UV: <strong>Moderate (2.4)</strong> &bull; 1,200+ Verified Sanctuaries</span>
+      </div>
+    </div>
+    <div class="daylight-mode-switcher">
+      <button class="theme-btn active" data-mode="morning-sun" title="Morning Sun Glow">☀️ Morning</button>
+      <button class="theme-btn" data-mode="high-noon" title="High Noon Clarity">🌤️ Noon</button>
+      <button class="theme-btn" data-mode="golden-hour" title="Golden Hour Warmth">🌅 Golden</button>
+      <button class="theme-btn" data-mode="night" title="Night Cellular Recovery Mode">🌙 Night</button>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo" id="header-brand-logo">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="title">LUMIÈRE</span>
+          <span class="tagline">BEAUTY & PERSONAL CARE</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="directory.html" class="nav-link">Directory Portal</a>
+        <a href="guides.html" class="nav-link">Beauty Guides</a>
+        <a href="routine-builder.html" class="nav-link">Routine Builder</a>
+        <a href="community.html" class="nav-link">Community & Q&A</a>
+        <a href="dashboard.html" class="nav-link" style="color: var(--gold-dark); font-weight: 700;">
+          Dashboard
+          <span class="nav-badge">Daylight</span>
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="day-night-toggle-btn" id="header-day-night-btn" aria-label="Toggle Day / Night Mode">
+          <span class="toggle-icon">☀️</span>
+          <span>Day</span>
+        </button>
+        <a href="dashboard.html" class="btn-icon" title="Saved Sanctuaries" id="header-bookmark-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span class="count-pill bookmark-count-badge">2</span>
+        </a>
+        <a href="directory.html" class="btn btn-primary btn-sm">Find Specialist</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="sparkle">✦</span>
+            <span>2026 Daylight Beauty & Wellness Sanctuary</span>
+          </div>
+          <h1 class="hero-title">
+            Discover Your Radiance. Connect With <em>Certified Care</em>.
+          </h1>
+          <p class="hero-lead">
+            The curated directory and clinical guide portal for modern personal care. Explore top-rated aesthetic clinics, holistic hair labs, circadian skincare science, and certified master practitioners.
+          </p>
+
+          <!-- Fast Search Form -->
+          <div class="hero-search-box" id="hero-fast-search">
+            <div class="search-field-group">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <select id="hero-category-select" aria-label="Select Category">
+                <option value="All">All Specialties</option>
+                <option value="MedSpa & Dermatology">MedSpa & Dermatology</option>
+                <option value="Hair & Scalp">Hair & Scalp Studios</option>
+                <option value="Luxury Day Spa">Luxury Day Spas</option>
+                <option value="Holistic Skincare">Holistic Botanical Care</option>
+                <option value="Organic Nail Studio">Organic Nail Ateliers</option>
+              </select>
+            </div>
+
+            <div class="search-field-group">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <select id="hero-city-select" aria-label="Select City">
+                <option value="All">Global Destinations</option>
+                <option value="Beverly Hills">Beverly Hills, CA</option>
+                <option value="Manhattan NYC">Manhattan, NY</option>
+                <option value="Le Marais Paris">Le Marais, Paris</option>
+                <option value="Mayfair London">Mayfair, London</option>
+                <option value="Gangnam Seoul">Gangnam, Seoul</option>
+              </select>
+            </div>
+
+            <button class="btn btn-primary" id="hero-search-btn">
+              Explore Now
+            </button>
+          </div>
+
+          <!-- Quick Trending Tags -->
+          <div class="hero-quick-tags">
+            <span style="font-weight: 600;">Trending:</span>
+            <span class="quick-tag-pill" onclick="window.location.href='directory.html?category=MedSpa+%26+Dermatology'">Barrier Restoration</span>
+            <span class="quick-tag-pill" onclick="window.location.href='directory.html?category=Hair+%26+Scalp'">Scalp Trichology</span>
+            <span class="quick-tag-pill" onclick="window.location.href='routine-builder.html'">Korean Glass Skin</span>
+            <span class="quick-tag-pill" onclick="window.location.href='guides.html'">Ceramide 3:1:1</span>
+          </div>
+        </div>
+
+        <!-- Hero Visual Frame -->
+        <div class="hero-visual-wrapper">
+          <div class="hero-image-frame">
+            <img src="assets/images/hero.jpg" alt="Lumière Daylight Serene Radiance Skincare">
+          </div>
+          <div class="floating-daylight-card">
+            <div class="icon-circle">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.95rem;">100% Certified Pros</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Verified board dermatologists & eco-certified spas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Daylight Forecast Banner -->
+      <div class="daylight-forecast-banner">
+        <div class="forecast-item">
+          <div class="forecast-icon">☀️</div>
+          <div>
+            <div class="forecast-title">Daylight UV Index</div>
+            <div class="forecast-value">2.4 — Moderate Sunlight</div>
+          </div>
+        </div>
+        <div class="forecast-item">
+          <div class="forecast-icon">🛡️</div>
+          <div>
+            <div class="forecast-title">Recommended Shield</div>
+            <div class="forecast-value">SPF 50+ Mineral with Antioxidants</div>
+          </div>
+        </div>
+        <div class="forecast-item">
+          <div class="forecast-icon">💧</div>
+          <div>
+            <div class="forecast-title">Atmospheric Humidity</div>
+            <div class="forecast-value">54% — Balanced Barrier Climate</div>
+          </div>
+        </div>
+        <a href="routine-builder.html" class="btn btn-secondary btn-sm">Build Daily Protocol &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Featured Directory Sanctuaries -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Curated Sanctuaries</span>
+        <h2 class="section-title">Premier Care & Wellness Portals</h2>
+        <p class="section-desc">Handpicked daylight aesthetic clinics, medical dermatologists, and artisan salons meeting rigorous clinical and eco-conscious benchmarks.</p>
+      </div>
+
+      <div class="directory-grid" id="featured-directory-grid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="directory.html" class="btn btn-primary btn-lg">Browse Full 1,200+ Directory Portal &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Interactive Skin & Hair Assessment Banner -->
+  <section class="section-tight" style="background: linear-gradient(135deg, rgba(231, 240, 235, 0.6) 0%, rgba(250, 247, 242, 0.8) 100%); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; padding: 32px 0;">
+        <div>
+          <span class="section-tag" style="background: var(--sage-light); color: var(--sage-primary);">Circadian Analysis</span>
+          <h2 style="font-size: 2.5rem; margin: 12px 0 16px 0;">Find Your Personalized Daylight Ritual in 60 Seconds</h2>
+          <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 24px;">Unsure whether your skin needs lipid barrier replenishment, gentle PHA turnover, or niacinamide pore balance? Take our clinical assessment to construct your custom AM & PM regimen.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="routine-builder.html" class="btn btn-sage">Launch Interactive Routine Builder</a>
+            <button class="btn btn-secondary" id="trigger-skin-quiz">Quick 3-Question Quiz</button>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <img src="assets/images/products.jpg" alt="Botanical Serums" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md); max-height: 320px; width: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Choose Your Care Package (Interactive Specialist Care Suite) -->
+  <section class="package-showcase-section" id="care-packages-section">
+    <div class="container">
+      <div class="package-showcase-grid">
+        <!-- Left Sidebar: Choose Your Package List -->
+        <div class="package-sidebar-col">
+          <div class="package-sidebar-card">
+            <h2 class="package-section-title">Choose Your Package</h2>
+            <div class="package-tabs-list" id="package-tabs-list">
+              <!-- Dynamically populated by js/app.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Active Package Display Card -->
+        <div>
+          <div class="package-display-card" id="package-display-card">
+            <!-- Dynamically populated by js/app.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Beauty Guides & Masterclasses -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Clinical Guides</span>
+        <h2 class="section-title">Science-Backed Care Guides</h2>
+        <p class="section-desc">Written by verified board-certified dermatologists, licensed master estheticians, and trichologists.</p>
+      </div>
+
+      <div class="guide-grid" id="featured-guides-grid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="guides.html" class="btn btn-secondary">Explore All Guides & Ingredient Glossary &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Client Radiance Testimonials & Community Snippet -->
+  <section class="section-tight" style="background: var(--bg-card); border-top: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Real Transformations</span>
+        <h2 class="section-title">Trusted By Over 40,000+ Care Seekers</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <div class="card" style="padding: 28px;">
+          <div style="color: #F5A623; margin-bottom: 12px;">★★★★★</div>
+          <p style="font-size: 0.95rem; color: var(--text-main); font-style: italic; margin-bottom: 16px;">
+            "Booking my Barrier Repair Facial at Aura Sanctuary through Lumière changed my skin completely. Having the dermatologist review my active ingredients beforehand saved me from months of irritation."
+          </p>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--rose-soft); color: var(--terracotta); display: flex; align-items: center; justify-content: center; font-weight: 700;">CM</div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.9rem;">Claire Montgomery</div>
+              <div style="font-size: 0.75rem; color: var(--text-subtle);">Client at Aura MedSpa &bull; Verified</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 28px;">
+          <div style="color: #F5A623; margin-bottom: 12px;">★★★★★</div>
+          <p style="font-size: 0.95rem; color: var(--text-main); font-style: italic; margin-bottom: 16px;">
+            "The Daylight Theme and circadian routine builder is genius. I used to apply retinoids in daylight without realizing they break down in UV light. My skin is noticeably brighter and calmer."
+          </p>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--gold-soft); color: var(--gold-dark); display: flex; align-items: center; justify-content: center; font-weight: 700;">AL</div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.9rem;">Alexander Lee</div>
+              <div style="font-size: 0.75rem; color: var(--text-subtle);">Daily Routine Tracker User &bull; 45 Day Streak</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 28px;">
+          <div style="color: #F5A623; margin-bottom: 12px;">★★★★★</div>
+          <p style="font-size: 0.95rem; color: var(--text-main); font-style: italic; margin-bottom: 16px;">
+            "As a salon owner, having our trichology lab listed on Lumière has connected us with thoughtful clients who truly value clean, non-toxic scalp health."
+          </p>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--sage-light); color: var(--sage-primary); display: flex; align-items: center; justify-content: center; font-weight: 700;">JT</div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.9rem;">Julian Thorne</div>
+              <div style="font-size: 0.75rem; color: var(--text-subtle);">Owner, L'Étoile Scalp Lab &bull; Manhattan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Daylight Newsletter & Glow Club -->
+  <section class="section" style="background: linear-gradient(135deg, #FFFDF9 0%, #F5ECE0 100%);">
+    <div class="container" style="max-width: 820px; text-align: center;">
+      <span class="section-tag">Daylight Club</span>
+      <h2 style="font-size: 2.8rem; margin: 12px 0 16px 0;">Receive The Weekly Circadian Skin Dispatch</h2>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 28px;">
+        Every Sunday at dawn, receive curated clinical ingredient analyses, seasonal UV preparation tips, and exclusive sanctuary treatment credits directly in your inbox.
+      </p>
+      <form onsubmit="event.preventDefault(); showToast('Welcome to the Daylight Club! Check your inbox for your 15% sanctuary welcome gift.', 'success'); this.reset();" style="display: flex; gap: 10px; max-width: 520px; margin: 0 auto;">
+        <input type="email" placeholder="Enter your email address" required style="flex: 1; padding: 14px 20px; border-radius: var(--radius-full); border: 1px solid var(--border-light); outline: none;">
+        <button type="submit" class="btn btn-primary">Join Club</button>
+      </form>
+      <div style="font-size: 0.78rem; color: var(--text-subtle); margin-top: 12px;">Zero spam. Unsubscribe at any time with one click.</div>
+    </div>
+  </section>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="title">LUMIÈRE</span>
+              <span class="tagline">BEAUTY & PERSONAL CARE</span>
+            </div>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+            The premier daylight sanctuary for certified aesthetic clinics, master trichologists, and circadian skincare protocols worldwide.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--gold-dark); font-weight: 600;">
+            ☀️ Synchronizing beauty with the natural daylight cycle.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Directory</h4>
+          <ul class="footer-links">
+            <li><a href="directory.html?category=MedSpa+%26+Dermatology">Medical Dermatology</a></li>
+            <li><a href="directory.html?category=Luxury+Day+Spa">Luxury Day Spas</a></li>
+            <li><a href="directory.html?category=Hair+%26+Scalp">Scalp & Hair Clinics</a></li>
+            <li><a href="directory.html?category=Holistic+Skincare">Holistic Botanical Care</a></li>
+            <li><a href="directory.html?category=Organic+Nail+Studio">Clean Nail Ateliers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Guides & Science</h4>
+          <ul class="footer-links">
+            <li><a href="guides.html">Barrier Repair Protocol</a></li>
+            <li><a href="guides.html">Circadian Skincare</a></li>
+            <li><a href="guides.html">Ingredient Glossary</a></li>
+            <li><a href="routine-builder.html">AM/PM Routine Builder</a></li>
+            <li><a href="community.html">Expert Q&A Board</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Portal</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">Daylight Dashboard</a></li>
+            <li><a href="dashboard.html">My Appointments</a></li>
+            <li><a href="dashboard.html">Saved Sanctuaries</a></li>
+            <li><a href="dashboard.html">Practitioner Portal</a></li>
+            <li><a href="community.html">Ask a Specialist</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Daylight Ambiance</h4>
+          <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 14px;">Adjust the site light to match your current circadian daylight phase:</p>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="theme-btn" data-mode="morning-sun" style="width: 100%; justify-content: flex-start;">☀️ Morning Sun (Gentle)</button>
+            <button class="theme-btn" data-mode="high-noon" style="width: 100%; justify-content: flex-start;">🌤️ High Noon (Luminous)</button>
+            <button class="theme-btn" data-mode="golden-hour" style="width: 100%; justify-content: flex-start;">🌅 Golden Hour (Warm Amber)</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 LUMIÈRE Beauty Personal Care Guide & Directory Portal. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#" style="color: var(--text-subtle);">Privacy Charter</a>
+          <a href="#" style="color: var(--text-subtle);">Clinical Standards</a>
+          <a href="#" style="color: var(--text-subtle);">Accessibility</a>
+          <a href="dashboard.html" style="color: var(--gold-dark); font-weight: 600;">Practitioner Login</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick Skin Assessment Modal -->
+  <div class="modal-overlay" id="skin-quiz-modal">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <h3 style="font-size: 1.4rem;">✨ 60-Second Skin & Routine Assessment</h3>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="event.preventDefault(); closeModal('skin-quiz-modal'); window.location.href='routine-builder.html';">
+          <div class="form-group">
+            <label>1. How does your skin feel 2 hours after cleansing in the morning?</label>
+            <select required>
+              <option value="tight">Tight, dry, or slightly flaky (Dry/Dehydrated)</option>
+              <option value="balanced">Comfortable, smooth, and supple (Normal)</option>
+              <option value="oily">Shiny on the T-zone and forehead (Combination)</option>
+              <option value="slick">Noticeably oily all over (Oily)</option>
+              <option value="reactive">Prone to stinging or sudden redness (Sensitive)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>2. What is your primary wellness goal right now?</label>
+            <select required>
+              <option value="barrier">Restore compromised barrier & calm redness</option>
+              <option value="glow">Enhance daylight luminosity & fade hyperpigmentation</option>
+              <option value="pores">Clarify pores and control midday shine</option>
+              <option value="antiaging">Cellular renewal, peptide firming & fine lines</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>3. What is your preferred routine complexity?</label>
+            <select required>
+              <option value="minimalist">Minimalist 3-Step (Cleanse, Shield, SPF)</option>
+              <option value="balanced">Targeted 5-Step (Active Essence, Serum, Barrier Cream)</option>
+              <option value="comprehensive">Comprehensive 8-Step Luxury Ritual</option>
+            </select>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('skin-quiz-modal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Generate My Protocol &rarr;</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Universal Directory Details Modal -->
+  <div class="modal-overlay" id="directory-detail-modal">
+    <div class="modal-sheet" style="max-width: 740px;">
+      <div class="modal-header">
+        <div>
+          <span id="modal-dir-cat" style="font-size: 0.78rem; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;"></span>
+          <h3 id="modal-dir-title" style="font-size: 1.8rem; margin-top: 4px;"></h3>
+        </div>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img id="modal-dir-img" src="" alt="" style="width: 100%; height: 260px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 20px;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: var(--text-main);">
+            <span style="color: #F5A623;">★</span>
+            <span id="modal-dir-rating"></span>
+          </div>
+          <div style="font-size: 0.88rem; color: var(--text-muted);" id="modal-dir-hours"></div>
+        </div>
+
+        <div style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+          📍 <span id="modal-dir-address"></span> &bull; 📞 <span id="modal-dir-phone"></span>
+        </div>
+
+        <p id="modal-dir-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; color: var(--text-main);"></p>
+
+        <h4 style="font-size: 1.2rem; margin-bottom: 12px; border-bottom: 1px solid var(--border-light); padding-bottom: 6px;">Available Signature Treatments</h4>
+        <div id="modal-dir-services" style="margin-bottom: 24px;"></div>
+
+        <h4 style="font-size: 1.2rem; margin-bottom: 12px; border-bottom: 1px solid var(--border-light); padding-bottom: 6px;">Certified Practitioners & Staff</h4>
+        <div id="modal-dir-specialists" style="margin-bottom: 28px;"></div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px;">
+          <button class="btn btn-secondary" onclick="closeModal('directory-detail-modal')">Close</button>
+          <button class="btn btn-primary" id="modal-dir-book-btn">Book Consultation Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Universal Appointment Booking Modal -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div>
+          <span style="font-size: 0.78rem; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Reserve Care</span>
+          <h3 id="booking-dir-name" style="font-size: 1.6rem; margin-top: 2px;"></h3>
+        </div>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="appointment-booking-form">
+          <input type="hidden" id="booking-dir-id">
+
+          <div class="form-group">
+            <label for="booking-service-select">Select Treatment or Service</label>
+            <select id="booking-service-select" required></select>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-specialist-select">Choose Practitioner</label>
+            <select id="booking-specialist-select" required></select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label for="booking-date">Preferred Date</label>
+              <input type="date" id="booking-date" value="2026-10-26" required>
+            </div>
+            <div class="form-group">
+              <label for="booking-time">Preferred Time</label>
+              <select id="booking-time" required>
+                <option value="09:30 AM">09:30 AM (Morning Glow Slot)</option>
+                <option value="11:00 AM">11:00 AM (Daylight Slot)</option>
+                <option value="02:30 PM">02:30 PM (Afternoon Refresh)</option>
+                <option value="04:30 PM">04:30 PM (Sunset Wind-Down)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-client-name">Your Full Name</label>
+            <input type="text" id="booking-client-name" placeholder="e.g. Eleanor Vance" required>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-client-email">Email for Confirmation & Calendar Invite</label>
+            <input type="email" id="booking-client-email" placeholder="eleanor@example.com" required>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('booking-modal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Confirm Appointment & Save to Dashboard</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Package Enquiry Modal -->
+  <div class="modal-overlay" id="package-enquiry-modal">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div>
+          <span style="font-size: 0.78rem; font-weight: 700; color: #D946EF; text-transform: uppercase;">Specialist Ritual Consultation</span>
+          <h3 id="enquiry-pkg-name" style="font-size: 1.6rem; margin-top: 2px;"></h3>
+        </div>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="event.preventDefault(); closeModal('package-enquiry-modal'); showToast('Thank you! Your package consultation request has been submitted. A specialist will contact you shortly.', 'success'); this.reset();">
+          <div class="form-group">
+            <label for="enquiry-name">Your Full Name</label>
+            <input type="text" id="enquiry-name" placeholder="e.g. Priya Sharma" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label for="enquiry-phone">Phone / WhatsApp Number</label>
+              <input type="tel" id="enquiry-phone" placeholder="+1 (555) 019-2831" required>
+            </div>
+            <div class="form-group">
+              <label for="enquiry-date">Preferred Consultation Date</label>
+              <input type="date" id="enquiry-date" value="2026-10-28" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="enquiry-notes">Specific Skin / Hair Concerns or Ritual Preferences</label>
+            <textarea id="enquiry-notes" rows="3" placeholder="Tell us about your skin/scalp goals, active ingredient sensitivities (e.g. retinoids/AHAs), preferred clinic visit vs home regimen..."></textarea>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('package-enquiry-modal')">Cancel</button>
+            <button type="submit" class="btn btn-primary" style="background: linear-gradient(135deg, #EC4899 0%, #C084FC 100%);">Reserve Package Consultation &rarr;</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="floating-back-to-top" id="floating-back-to-top" title="Back to top">↑</button>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

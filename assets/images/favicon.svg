@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="sunGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6D59B"/>
+      <stop offset="50%" stop-color="#D4AF67"/>
+      <stop offset="100%" stop-color="#AB843B"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Outer Soft Circle -->
+  <circle cx="32" cy="32" r="30" fill="#FAF6F0" stroke="#EAD9B8" stroke-width="2"/>
+  
+  <!-- Radiance Rays -->
+  <g stroke="url(#sunGlow)" stroke-width="2.5" stroke-linecap="round">
+    <line x1="32" y1="8" x2="32" y2="14"/>
+    <line x1="32" y1="50" x2="32" y2="56"/>
+    <line x1="8" y1="32" x2="14" y2="32"/>
+    <line x1="50" y1="32" x2="56" y2="32"/>
+    <line x1="15" y1="15" x2="19.5" y2="19.5"/>
+    <line x1="44.5" y1="44.5" x2="49" y2="49"/>
+    <line x1="15" y1="49" x2="19.5" y2="44.5"/>
+    <line x1="44.5" y1="19.5" x2="49" y2="15"/>
+  </g>
+  
+  <!-- Central Glowing Sun Sphere -->
+  <circle cx="32" cy="32" r="12" fill="url(#sunGlow)" filter="url(#glow)"/>
+  
+  <!-- Delicate Inner Core -->
+  <circle cx="32" cy="32" r="6" fill="#FFFDF8"/>
+</svg>
