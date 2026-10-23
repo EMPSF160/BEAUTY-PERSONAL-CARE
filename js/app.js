@@ -570,7 +570,7 @@ function createDirectoryCardHTML(item) {
         </div>
         <div class="directory-card-footer">
           <span class="price-indicator">${item.priceTier}</span>
-          <div style="display: flex; gap: 8px;">
+          <div class="directory-card-actions">
             <button class="btn btn-secondary btn-sm" onclick="openDirectoryModal('${item.id}')">View Details</button>
             <button class="btn btn-primary btn-sm" onclick="startBooking('${item.id}')">Book Care</button>
           </div>

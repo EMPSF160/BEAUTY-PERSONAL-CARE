@@ -1026,17 +1026,34 @@ button, input, select, textarea {
 
 .directory-card-footer {
   margin-top: auto;
-  padding-top: 18px;
+  padding-top: 16px;
   border-top: 1px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .price-indicator {
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--gold-dark);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.directory-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.directory-card-actions .btn {
+  padding: 7px 14px;
+  font-size: 0.82rem;
+  white-space: nowrap;
 }
 
 /* ==========================================================================
@@ -2135,6 +2152,18 @@ button, input, select, textarea {
 }
 
 @media (max-width: 600px) {
+  .container { padding: 0 16px; }
+  .directory-grid { grid-template-columns: 1fr !important; }
+  .guide-grid { grid-template-columns: 1fr !important; }
+  .package-showcase-grid { grid-template-columns: 1fr !important; }
+  .directory-card-content { padding: 18px 16px; }
+  .floating-back-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
   .wizard-step-node { padding: 0 4px; }
   .step-circle { width: 34px; height: 34px; font-size: 0.85rem; }
   .step-node-label { font-size: 0.68rem; text-align: center; }
@@ -2144,6 +2173,29 @@ button, input, select, textarea {
 }
 
 @media (max-width: 520px) {
+  .directory-card-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .directory-card-footer .price-indicator {
+    align-self: flex-start;
+  }
+  .directory-card-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .directory-card-actions .btn {
+    width: 100%;
+    padding: 8px 6px;
+    font-size: 0.8rem;
+    text-align: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
   .dashboard-stats-grid { grid-template-columns: 1fr; }
