@@ -1846,7 +1846,7 @@ button, input, select, textarea {
 .site-footer {
   background: linear-gradient(180deg, #FAF7F2 0%, #EDE5D8 100%);
   border-top: 1px solid var(--border-light);
-  padding: 64px 0 32px 0;
+  padding: 64px 0 100px 0;
   margin-top: auto;
 }
 
@@ -1893,6 +1893,29 @@ button, input, select, textarea {
   color: var(--text-subtle);
   flex-wrap: wrap;
   gap: 16px;
+  padding-right: 70px;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-legal-links a {
+  color: var(--text-subtle);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.footer-legal-links a:hover {
+  color: var(--gold-dark);
+}
+
+.practitioner-login-link {
+  color: var(--gold-dark) !important;
+  font-weight: 600;
 }
 
 /* ==========================================================================
@@ -2196,8 +2219,20 @@ button, input, select, textarea {
     justify-content: center;
     white-space: nowrap;
   }
+  .site-footer { padding: 48px 0 110px 0 !important; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-  .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+  .footer-bottom { 
+    flex-direction: column; 
+    text-align: center; 
+    align-items: center; 
+    gap: 14px; 
+    padding-right: 0; 
+  }
+  .footer-legal-links { 
+    justify-content: center; 
+    gap: 10px 16px; 
+    font-size: 0.82rem; 
+  }
   .dashboard-stats-grid { grid-template-columns: 1fr; }
   .brand-text .title { font-size: 1.2rem; }
   .brand-icon { width: 28px; height: 28px; }
