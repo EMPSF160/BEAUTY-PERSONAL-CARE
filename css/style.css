@@ -139,7 +139,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   width: 100%;
 }
@@ -156,11 +156,20 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   width: 100%;
   position: relative;
   transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Sticky Header Container across all pages */
+.sticky-header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 h1, h2, h3, h4, .font-serif {
@@ -682,6 +691,19 @@ button, input, select, textarea {
 
 .hero-badge .sparkle {
   color: #E2A738;
+}
+
+[data-theme="night"] .hero-badge,
+[data-daylight="night"] .hero-badge {
+  background: rgba(229, 184, 105, 0.14);
+  border-color: rgba(229, 184, 105, 0.35);
+  color: #F7CB7F;
+  box-shadow: 0 0 16px rgba(229, 184, 105, 0.15);
+}
+
+[data-theme="night"] .hero-badge .sparkle,
+[data-daylight="night"] .hero-badge .sparkle {
+  color: #F7CB7F;
 }
 
 .hero-title {
@@ -2328,6 +2350,548 @@ button, input, select, textarea {
 [data-theme="night"] .site-footer {
   background: linear-gradient(180deg, #13131A 0%, #09090D 100%);
   border-top-color: rgba(240, 220, 190, 0.12);
+}
+
+/* ==========================================================================
+   Circadian Assessment Section (Homepage Night Mode Contrast Fix)
+   ========================================================================== */
+.circadian-assessment-section {
+  background: linear-gradient(135deg, rgba(231, 240, 235, 0.6) 0%, rgba(250, 247, 242, 0.8) 100%);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+[data-theme="night"] .circadian-assessment-section,
+[data-daylight="night"] .circadian-assessment-section {
+  background: linear-gradient(135deg, #16161F 0%, #111117 100%) !important;
+  border-color: rgba(240, 220, 190, 0.12) !important;
+}
+
+[data-theme="night"] .circadian-assessment-section .section-tag,
+[data-daylight="night"] .circadian-assessment-section .section-tag {
+  background: rgba(82, 166, 121, 0.22) !important;
+  color: #6EE7B7 !important;
+}
+
+[data-theme="night"] .circadian-assessment-section h2,
+[data-daylight="night"] .circadian-assessment-section h2 {
+  color: #F4F1EA !important;
+}
+
+[data-theme="night"] .circadian-assessment-section p,
+[data-daylight="night"] .circadian-assessment-section p {
+  color: #D1CBC3 !important;
+}
+
+/* ==========================================================================
+   Daylight Club Section (Homepage Night Mode Contrast Fix)
+   ========================================================================== */
+.daylight-club-section {
+  background: linear-gradient(135deg, #FFFDF9 0%, #F5ECE0 100%);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+[data-theme="night"] .daylight-club-section,
+[data-daylight="night"] .daylight-club-section {
+  background: linear-gradient(135deg, #181822 0%, #111118 100%) !important;
+  border-color: rgba(240, 220, 190, 0.12) !important;
+}
+
+[data-theme="night"] .daylight-club-section h2,
+[data-daylight="night"] .daylight-club-section h2 {
+  color: #F4F1EA !important;
+}
+
+[data-theme="night"] .daylight-club-section p,
+[data-daylight="night"] .daylight-club-section p {
+  color: #D1CBC3 !important;
+}
+
+[data-theme="night"] .daylight-club-section input,
+[data-daylight="night"] .daylight-club-section input {
+  background: #14141C !important;
+  border-color: rgba(240, 220, 190, 0.25) !important;
+  color: #F4F1EA !important;
+}
+
+/* ==========================================================================
+   Circadian Framework Card (Beauty Guides Night Mode Contrast Fix)
+   ========================================================================== */
+.circadian-framework-card {
+  padding: clamp(20px, 4vw, 40px);
+  background: linear-gradient(135deg, rgba(255, 252, 248, 0.95) 0%, rgba(246, 238, 228, 0.9) 100%);
+  border: 1px solid var(--border-light);
+}
+
+[data-theme="night"] .circadian-framework-card,
+[data-daylight="night"] .circadian-framework-card {
+  background: linear-gradient(135deg, #181822 0%, #121219 100%) !important;
+  border-color: rgba(240, 220, 190, 0.15) !important;
+}
+
+[data-theme="night"] .circadian-framework-card h3,
+[data-daylight="night"] .circadian-framework-card h3 {
+  color: #F4F1EA !important;
+}
+
+[data-theme="night"] .circadian-framework-card p,
+[data-daylight="night"] .circadian-framework-card p {
+  color: #D1CBC3 !important;
+}
+
+[data-theme="night"] .circadian-framework-card .section-tag,
+[data-daylight="night"] .circadian-framework-card .section-tag {
+  background: rgba(229, 184, 105, 0.16) !important;
+  color: #F7CB7F !important;
+}
+
+/* ==========================================================================
+   Circadian Blueprint Card (Routine Builder Night Mode Contrast Fix)
+   ========================================================================== */
+.circadian-blueprint-card {
+  padding: clamp(20px, 4vw, 36px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 246, 238, 0.9) 100%);
+  border: 1px solid var(--border-light);
+}
+
+[data-theme="night"] .circadian-blueprint-card,
+[data-daylight="night"] .circadian-blueprint-card {
+  background: linear-gradient(135deg, #181822 0%, #121219 100%) !important;
+  border-color: rgba(240, 220, 190, 0.15) !important;
+}
+
+[data-theme="night"] .circadian-blueprint-card h2,
+[data-daylight="night"] .circadian-blueprint-card h2 {
+  color: #F4F1EA !important;
+}
+
+[data-theme="night"] .circadian-blueprint-card .section-tag,
+[data-daylight="night"] .circadian-blueprint-card .section-tag {
+  background: rgba(229, 184, 105, 0.16) !important;
+  color: #F7CB7F !important;
+}
+
+.guideline-box-am {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 0.92rem;
+  color: var(--gold-dark);
+  background: var(--gold-soft);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+}
+
+[data-theme="night"] .guideline-box-am,
+[data-daylight="night"] .guideline-box-am {
+  background: rgba(229, 184, 105, 0.12) !important;
+  color: #F7CB7F !important;
+  border-color: rgba(229, 184, 105, 0.25) !important;
+}
+
+.guideline-box-pm {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 0.92rem;
+  color: var(--sage-primary);
+  background: var(--sage-light);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+}
+
+[data-theme="night"] .guideline-box-pm,
+[data-daylight="night"] .guideline-box-pm {
+  background: rgba(82, 166, 121, 0.15) !important;
+  color: #6EE7B7 !important;
+  border-color: rgba(82, 166, 121, 0.25) !important;
+}
+
+/* ==========================================================================
+   Skin Mood Log Card (Dashboard Contrast Fix)
+   ========================================================================== */
+.skin-mood-card {
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(255, 252, 248, 0.95) 0%, rgba(246, 238, 228, 0.9) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+
+[data-theme="night"] .skin-mood-card,
+[data-daylight="night"] .skin-mood-card {
+  background: #171720 !important;
+  border-color: rgba(240, 220, 190, 0.14) !important;
+}
+
+[data-theme="night"] .skin-mood-card h4,
+[data-daylight="night"] .skin-mood-card h4 {
+  color: #F4F1EA !important;
+}
+
+[data-theme="night"] .skin-mood-card p,
+[data-daylight="night"] .skin-mood-card p {
+  color: #D1CBC3 !important;
+}
+
+[data-theme="night"] .skin-mood-card textarea,
+[data-daylight="night"] .skin-mood-card textarea {
+  background: #101016 !important;
+  border-color: rgba(240, 220, 190, 0.18) !important;
+  color: #F4F1EA !important;
+}
+
+/* ==========================================================================
+   Dedicated Dashboard Header & Navigation
+   ========================================================================== */
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="night"] .dashboard-header {
+  background: rgba(17, 17, 24, 0.94);
+  border-bottom-color: rgba(240, 220, 190, 0.12);
+}
+
+.dashboard-header-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
+.dashboard-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash-user-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px 5px 6px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.dash-user-profile-btn:hover {
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.dash-avatar-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F3DAB0 0%, #D8AE64 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.dash-logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(184, 93, 67, 0.08);
+  border: 1px solid rgba(184, 93, 67, 0.25);
+  color: var(--terracotta);
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.dash-logout-btn:hover {
+  background: var(--terracotta);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(184, 93, 67, 0.25);
+  transform: translateY(-1px);
+}
+
+[data-theme="night"] .dash-user-profile-btn {
+  background: #1C1C26;
+  border-color: rgba(240, 220, 190, 0.16);
+  color: #F4F1EA;
+}
+
+[data-theme="night"] .dash-logout-btn {
+  background: rgba(226, 114, 91, 0.12);
+  border-color: rgba(226, 114, 91, 0.3);
+  color: #F87171;
+}
+
+[data-theme="night"] .dash-logout-btn:hover {
+  background: #E2725B;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Hydration Tracker Card & Spacing (Layout Fix)
+   ========================================================================== */
+.hydration-tracker-card {
+  padding: 28px !important;
+  margin-bottom: 28px;
+}
+
+.hydration-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.water-cups-row {
+  display: grid !important;
+  grid-template-columns: repeat(8, 1fr) !important;
+  gap: 10px !important;
+  margin: 22px 0 16px 0 !important;
+  padding: 4px 0 !important;
+}
+
+.water-cup-btn {
+  width: 100% !important;
+  min-width: 48px !important;
+  height: 56px !important;
+  border-radius: 8px 8px 12px 12px !important;
+  border: 2px solid #C4DCEE !important;
+  background: rgba(220, 240, 255, 0.25) !important;
+  cursor: pointer;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  padding: 0 2px 6px 2px !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #2B6CB0 !important;
+  transition: var(--transition) !important;
+}
+
+.water-cup-btn:hover {
+  transform: translateY(-2px);
+  border-color: #2B6CB0 !important;
+  box-shadow: 0 4px 10px rgba(43, 108, 176, 0.2);
+}
+
+.water-cup-btn.filled {
+  background: linear-gradient(180deg, #4299E1 0%, #2B6CB0 100%) !important;
+  border-color: #2B6CB0 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 3px 10px rgba(43, 108, 176, 0.3) !important;
+}
+
+.hydration-tip-box {
+  background: rgba(43, 108, 176, 0.08);
+  border-left: 3px solid #2B6CB0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 12px 16px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 14px;
+}
+
+[data-theme="night"] .water-cup-btn {
+  border-color: rgba(99, 179, 237, 0.35) !important;
+  background: rgba(43, 108, 176, 0.16) !important;
+  color: #90CDF4 !important;
+}
+
+[data-theme="night"] .water-cup-btn.filled {
+  background: linear-gradient(180deg, #3182CE 0%, #1A365D 100%) !important;
+  border-color: #4299E1 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 12px rgba(66, 153, 225, 0.35) !important;
+}
+
+[data-theme="night"] .hydration-tip-box {
+  background: rgba(43, 108, 176, 0.16);
+  border-left-color: #4299E1;
+  color: #D1CBC3;
+}
+
+@media (max-width: 768px) {
+  .water-cups-row {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .water-cups-row {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+  }
+  .water-cup-btn {
+    min-width: 36px !important;
+    height: 50px !important;
+    font-size: 0.66rem !important;
+  }
+}
+
+/* ==========================================================================
+   Saved Sanctuaries List (Mobile 360 Layout Fix)
+   ========================================================================== */
+.saved-sanctuary-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  transition: var(--transition);
+  min-width: 0;
+}
+
+.saved-sanctuary-item:hover {
+  border-color: var(--gold-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.saved-sanctuary-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.saved-sanctuary-info {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.saved-sanctuary-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.saved-sanctuary-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.saved-sanctuary-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+[data-theme="night"] .saved-sanctuary-item {
+  background: #171720;
+  border-color: rgba(240, 220, 190, 0.14);
+}
+
+@media (max-width: 480px) {
+  .saved-sanctuary-item {
+    flex-wrap: wrap;
+    padding: 12px;
+    gap: 10px;
+  }
+  .saved-sanctuary-thumb {
+    width: 48px;
+    height: 48px;
+  }
+  .saved-sanctuary-info {
+    flex: 1;
+    min-width: 130px;
+  }
+  .saved-sanctuary-actions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-light);
+  }
+  .saved-sanctuary-actions .btn {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Community & Q&A Mobile Layout Fix (Mobile 360 Width)
+   ========================================================================== */
+.community-layout > * {
+  min-width: 0;
+}
+
+.community-thread-card {
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.thread-expert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.thread-expert-identity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .community-thread-card {
+    padding: 16px 14px !important;
+  }
+  .thread-expert-answer {
+    padding: 12px 14px !important;
+    border-radius: var(--radius-sm) !important;
+  }
+  .thread-user-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 }
 
 /* ==========================================================================

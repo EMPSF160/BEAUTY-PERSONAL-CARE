@@ -10,6 +10,8 @@
 </head>
 <body data-page="routine">
 
+  <!-- Sticky Header Container (Viewport Sticky) -->
+  <div class="sticky-header-wrapper">
   <!-- Daylight Top Ambience Bar (Strict Straight Line) -->
   <div class="top-daylight-bar">
     <div class="daylight-info-group">
@@ -98,6 +100,7 @@
       </div>
     </div>
   </header>
+  </div>
 
   <!-- Page Hero -->
   <section class="section-tight" style="padding-bottom: 24px;">
@@ -179,8 +182,8 @@
           </div>
         </div>
 
-        <!-- Generated Routine Output Card -->
-        <div class="card" style="padding: clamp(20px, 4vw, 36px); background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 246, 238, 0.9) 100%);">
+        <!-- Generated Routine Output Card (Circadian Blueprint) -->
+        <div class="card circadian-blueprint-card">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 28px;">
             <div>
               <span class="section-tag">Circadian Blueprint</span>
@@ -204,7 +207,7 @@
 
           <!-- AM Steps Panel -->
           <div id="routine-panel-am">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 0.92rem; color: var(--gold-dark); background: var(--gold-soft); padding: 12px 18px; border-radius: var(--radius-md);">
+            <div class="guideline-box-am">
               <span>💡</span>
               <strong>Daylight Guideline:</strong> Apply from thinnest aqueous formula to richest lipid emulsion. Wait 60 seconds before applying mineral SPF.
             </div>
@@ -215,7 +218,7 @@
 
           <!-- PM Steps Panel (Hidden by default) -->
           <div id="routine-panel-pm" style="display: none;">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 0.92rem; color: var(--sage-primary); background: var(--sage-light); padding: 12px 18px; border-radius: var(--radius-md);">
+            <div class="guideline-box-pm">
               <span>🌙</span>
               <strong>Night Guideline:</strong> Double cleanse to remove lipophilic sunscreen completely. Allow retinal serum to absorb for 2 minutes before sealing.
             </div>

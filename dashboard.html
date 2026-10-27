@@ -10,88 +10,76 @@
 </head>
 <body data-page="dashboard">
 
-  <!-- Daylight Top Ambience Bar (Strict Straight Line) -->
-  <div class="top-daylight-bar">
-    <div class="daylight-info-group">
-      <div class="daylight-status-pill">
-        <span class="sun-dot"></span>
-        <span>Daylight Index: <strong>Luminous Morning (UV 2)</strong> &bull; Personalized Sanctuary Dashboard</span>
-      </div>
-    </div>
-    <div class="daylight-mode-switcher">
-      <button class="theme-btn active" data-mode="morning-sun" title="Morning Sun Glow">☀️ Morning</button>
-      <button class="theme-btn" data-mode="high-noon" title="High Noon Clarity">🌤️ Noon</button>
-      <button class="theme-btn" data-mode="golden-hour" title="Golden Hour Warmth">🌅 Golden</button>
-      <button class="theme-btn" data-mode="night" title="Night Cellular Recovery Mode">🌙 Night</button>
-    </div>
-  </div>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand-logo">
+
+  <!-- Dedicated Dashboard Top Navigation Bar with Profile and Logout Icons -->
+  <header class="dashboard-header">
+    <div class="dashboard-header-inner">
+      <a href="index.html" class="brand-logo" id="dash-brand-logo">
         <div class="brand-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"/>
             <line x1="12" y1="1" x2="12" y2="3"/>
             <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
         </div>
         <div class="brand-text">
           <span class="title">LUMIÈRE</span>
-          <span class="tagline">BEAUTY & PERSONAL CARE</span>
+          <span class="tagline">SANCTUARY DASHBOARD</span>
         </div>
       </a>
 
-      <nav class="main-nav" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="directory.html" class="nav-link">Directory Portal</a>
-        <a href="guides.html" class="nav-link">Beauty Guides</a>
-        <a href="routine-builder.html" class="nav-link">Routine Builder</a>
-        <a href="community.html" class="nav-link">Community & Q&A</a>
-        <a href="dashboard.html" class="nav-link active" style="color: var(--gold-dark); font-weight: 700;">
-          Dashboard
-          <span class="nav-badge">Daylight</span>
-        </a>
-      </nav>
+      <!-- Daylight Ambience Quick Switcher -->
+      <div class="daylight-mode-switcher" style="display: flex;">
+        <button class="theme-btn active" data-mode="morning-sun" title="Morning Sun Glow">☀️ Morning</button>
+        <button class="theme-btn" data-mode="high-noon" title="High Noon Clarity">🌤️ Noon</button>
+        <button class="theme-btn" data-mode="golden-hour" title="Golden Hour Warmth">🌅 Golden</button>
+        <button class="theme-btn" data-mode="night" title="Night Recovery Mode">🌙 Night</button>
+      </div>
 
-      <div class="header-actions">
+      <div class="dashboard-header-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm" title="Back to Portal Home">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <span>Main Portal</span>
+        </a>
+
         <button class="day-night-toggle-btn" id="header-day-night-btn" aria-label="Toggle Day / Night Mode">
           <span class="toggle-icon">☀️</span>
           <span class="toggle-text">Day</span>
         </button>
-        <button id="switch-portal-mode-btn" class="btn btn-secondary btn-sm" style="font-size: 0.8rem;">
-          Practitioner Portal
-        </button>
-        <a href="routine-builder.html" class="btn btn-primary btn-sm">+ Edit Routine</a>
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
-      </div>
-    </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
-      <div class="mobile-nav-links">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="directory.html" class="mobile-nav-link">Directory Portal</a>
-        <a href="guides.html" class="mobile-nav-link">Beauty Guides</a>
-        <a href="routine-builder.html" class="mobile-nav-link">Routine Builder</a>
-        <a href="community.html" class="mobile-nav-link">Community & Q&A</a>
-        <a href="dashboard.html" class="mobile-nav-link active" style="color: var(--gold-dark); font-weight: 700;">Daylight Dashboard</a>
-      </div>
-      <div class="mobile-drawer-actions">
-        <div class="mobile-drawer-tools-row">
-          <button class="day-night-toggle-btn" aria-label="Toggle Day / Night Mode">
-            <span class="toggle-icon">☀️</span>
-            <span>Day</span>
-          </button>
-          <a href="dashboard.html" class="mobile-saved-pill" title="Saved Sanctuaries">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        <button id="switch-portal-mode-btn" class="btn btn-secondary btn-sm" style="font-size: 0.8rem;">
+          Practitioner Suite
+        </button>
+
+        <!-- Profile Icon & Button -->
+        <button class="dash-user-profile-btn" id="dash-profile-btn" title="View Profile">
+          <div class="dash-avatar-circle">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
             </svg>
-            <span>Saved (<strong class="bookmark-count-badge">2</strong>)</span>
-          </a>
-        </div>
-        <a href="routine-builder.html" class="btn btn-primary mobile-drawer-cta">Build Routine &rarr;</a>
+          </div>
+          <span class="dash-user-name">Claire M.</span>
+        </button>
+
+        <!-- Logout Icon & Button -->
+        <button class="dash-logout-btn" id="dash-logout-btn" title="Log Out">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+          <span>Logout</span>
+        </button>
       </div>
     </div>
   </header>
@@ -274,14 +262,14 @@
               </div>
             </div>
 
-            <!-- Hydration Tracker Card -->
-            <div class="card" style="padding: 24px;">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
+            <!-- Hydration Tracker Card (Optimized Layout & Padding) -->
+            <div class="card hydration-tracker-card">
+              <div class="hydration-header-row">
                 <div>
-                  <h4 style="font-size: 1.2rem;">Daily Cellular Hydration</h4>
-                  <div style="font-size: 0.8rem; color: var(--text-muted);">Maintain optimal stratum corneum turgor pressure</div>
+                  <h4 style="font-size: 1.25rem; margin-bottom: 2px;">Daily Cellular Hydration</h4>
+                  <div style="font-size: 0.82rem; color: var(--text-muted);">Maintain optimal stratum corneum turgor pressure</div>
                 </div>
-                <div id="water-count-display" style="font-weight: 700; color: #2B6CB0; font-size: 1rem;">
+                <div id="water-count-display" style="font-weight: 700; color: #2B6CB0; font-size: 1.05rem;">
                   5 / 8 Glasses (1,250 ml)
                 </div>
               </div>
@@ -289,9 +277,9 @@
               <div class="water-cups-row" id="water-cups-container">
                 <!-- Rendered dynamically by js/app.js -->
               </div>
-              <p style="font-size: 0.78rem; color: var(--text-subtle);">
-                Tip: Click any glass to record your intake. Drinking water across daylight hours prevents dermal moisture evaporation.
-              </p>
+              <div class="hydration-tip-box">
+                <strong>Tip:</strong> Click any glass to record your intake. Drinking water across daylight hours prevents dermal moisture evaporation.
+              </div>
             </div>
 
           </div>
@@ -321,8 +309,8 @@
               </div>
             </div>
 
-            <!-- Quick Skin Journal Entry -->
-            <div class="card" style="padding: 24px; background: linear-gradient(135deg, rgba(255, 252, 248, 0.95) 0%, rgba(246, 238, 228, 0.9) 100%);">
+            <!-- Quick Skin Journal Entry (Night Mode Contrast Fix) -->
+            <div class="card skin-mood-card">
               <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Today's Skin Mood Log</h4>
               <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px;">How does your skin barrier feel right now in this daylight?</p>
               
@@ -332,8 +320,8 @@
                 <button class="quick-tag-pill" onclick="showToast('Skin logged: Sensitive / Redness. Reapply Cica balm.', 'info')">🌸 Mild Flushing</button>
               </div>
 
-              <textarea rows="2" placeholder="Private notes (e.g. Started new 5% Niacinamide serum today...)" style="width: 100%; padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-light); font-size: 0.88rem; outline: none; background: #FFFFFF;"></textarea>
-              <button class="btn btn-primary btn-sm" style="margin-top: 10px; width: 100%;" onclick="showToast('Skin journal entry recorded for October 22, 2026', 'success')">Save Journal Entry</button>
+              <textarea rows="2" placeholder="Private notes (e.g. Started new 5% Niacinamide serum today...)" style="width: 100%; padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-light); font-size: 0.88rem; outline: none;"></textarea>
+              <button class="btn btn-primary btn-sm" style="margin-top: 10px; width: 100%;" onclick="showToast('Skin journal entry recorded for today', 'success')">Save Journal Entry</button>
             </div>
 
           </div>
@@ -497,75 +485,7 @@
     </div>
   </main>
 
-  <!-- Universal Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="brand-logo" style="margin-bottom: 16px;">
-            <div class="brand-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"/>
-                <line x1="12" y1="1" x2="12" y2="3"/>
-                <line x1="12" y1="21" x2="12" y2="23"/>
-              </svg>
-            </div>
-            <div class="brand-text">
-              <span class="title">LUMIÈRE</span>
-              <span class="tagline">BEAUTY & PERSONAL CARE</span>
-            </div>
-          </div>
-          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-            Your personal daylight portal for tracking daily circadian wellness and managing certified care appointments.
-          </p>
-        </div>
 
-        <div class="footer-col">
-          <h4>Directory Categories</h4>
-          <ul class="footer-links">
-            <li><a href="directory.html?category=MedSpa+%26+Dermatology">MedSpa & Dermatology</a></li>
-            <li><a href="directory.html?category=Luxury+Day+Spa">Luxury Day Spas</a></li>
-            <li><a href="directory.html?category=Hair+%26+Scalp">Hair & Scalp Health</a></li>
-            <li><a href="directory.html?category=Holistic+Skincare">Holistic Herbology</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Guides & Science</h4>
-          <ul class="footer-links">
-            <li><a href="guides.html">Barrier Repair Protocol</a></li>
-            <li><a href="guides.html">Circadian Skincare</a></li>
-            <li><a href="guides.html">Ingredient Glossary</a></li>
-            <li><a href="routine-builder.html">AM/PM Routine Builder</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Portal</h4>
-          <ul class="footer-links">
-            <li><a href="dashboard.html">Daylight Dashboard</a></li>
-            <li><a href="dashboard.html">My Appointments</a></li>
-            <li><a href="dashboard.html">Saved Sanctuaries</a></li>
-            <li><a href="community.html">Community Forum</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Daylight Ambiance</h4>
-          <div style="display: flex; flex-direction: column; gap: 8px;">
-            <button class="theme-btn" data-mode="morning-sun" style="width: 100%; justify-content: flex-start;">☀️ Morning Sun</button>
-            <button class="theme-btn" data-mode="high-noon" style="width: 100%; justify-content: flex-start;">🌤️ High Noon</button>
-            <button class="theme-btn" data-mode="golden-hour" style="width: 100%; justify-content: flex-start;">🌅 Golden Hour</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>&copy; 2026 LUMIÈRE Beauty Personal Care Guide & Directory Portal. All rights reserved.</div>
-        <div>Personal Sanctuary Portal</div>
-      </div>
-    </div>
-  </footer>
 
   <div id="toast-container" class="toast-container"></div>
 

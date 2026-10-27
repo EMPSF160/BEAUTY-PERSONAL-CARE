@@ -966,16 +966,16 @@ function renderCommunityThreads() {
   container.innerHTML = LUMIERE_DATA.communityThreads.map(th => `
     <div class="community-thread-card">
       <div class="thread-user-row">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: var(--text-main);">
+        <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
+          <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: var(--text-main); flex-shrink: 0;">
             ${th.avatar}
           </div>
-          <div>
-            <div style="font-weight: 700; font-size: 0.92rem;">${th.author}</div>
+          <div style="min-width: 0;">
+            <div style="font-weight: 700; font-size: 0.92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${th.author}</div>
             <div style="font-size: 0.75rem; color: var(--text-subtle);">${th.time} &bull; <span style="color: var(--gold-dark); font-weight: 600;">${th.topic}</span></div>
           </div>
         </div>
-        <button class="btn btn-secondary btn-sm" onclick="upvoteThread('${th.id}', this)">
+        <button class="btn btn-secondary btn-sm" onclick="upvoteThread('${th.id}', this)" style="flex-shrink: 0;">
           ▲ ${th.upvotes}
         </button>
       </div>
@@ -984,8 +984,8 @@ function renderCommunityThreads() {
       
       ${th.answeredByExpert ? `
         <div class="thread-expert-answer">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-            <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="thread-expert-header">
+            <div class="thread-expert-identity">
               <span style="font-weight: 700; font-size: 0.88rem; color: var(--sage-primary);">${th.expertAnswer.expertName}</span>
               <span style="font-size: 0.7rem; background: var(--sage-primary); color: white; padding: 2px 6px; border-radius: var(--radius-full); font-weight: 600;">${th.expertAnswer.badge}</span>
             </div>
@@ -1020,6 +1020,27 @@ function initDashboardPage() {
   initWaterTracker();
   initRoutineChecklists();
   initProviderModeToggle();
+
+  // Profile icon button handler
+  const profileBtn = document.getElementById('dash-profile-btn');
+  if (profileBtn) {
+    profileBtn.addEventListener('click', () => {
+      showToast('👤 Claire Montgomery • VIP Daylight Seeker • Barrier Streak: 7 Days', 'info');
+    });
+  }
+
+  // Logout icon button handler
+  const logoutBtn = document.getElementById('dash-logout-btn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to log out of your Daylight Sanctuary Dashboard?')) {
+        showToast('Logged out successfully. Returning to Home Portal...', 'info');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 800);
+      }
+    });
+  }
 }
 
 function updateDashboardGreetings() {
@@ -1104,13 +1125,13 @@ function renderDashboardBookmarks() {
   }
   
   container.innerHTML = saved.map(item => `
-    <div style="display: flex; align-items: center; gap: 14px; background: var(--bg-card-solid); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 10px;">
-      <img src="${item.image}" alt="${item.name}" style="width: 56px; height: 56px; border-radius: var(--radius-sm); object-fit: cover;">
-      <div style="flex: 1;">
-        <h4 style="font-size: 1.05rem; margin-bottom: 2px;">${item.name}</h4>
-        <div style="font-size: 0.78rem; color: var(--text-muted);">${item.city} &bull; ${item.category}</div>
+    <div class="saved-sanctuary-item">
+      <img src="${item.image}" alt="${item.name}" class="saved-sanctuary-thumb">
+      <div class="saved-sanctuary-info">
+        <h4 class="saved-sanctuary-title">${item.name}</h4>
+        <div class="saved-sanctuary-sub">${item.city} &bull; ${item.category}</div>
       </div>
-      <div style="display: flex; gap: 6px;">
+      <div class="saved-sanctuary-actions">
         <button class="btn btn-secondary btn-sm" onclick="openDirectoryModal('${item.id}')">View</button>
         <button class="btn btn-secondary btn-sm" onclick="toggleBookmark('${item.id}')" title="Remove">✕</button>
       </div>
